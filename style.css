@@ -108,7 +108,7 @@ footer {
 .marquee {
   background-color: black;
   color: black;
-  -webkit-text-stroke: 0.25px white;
+  -webkit-text-stroke: 0.05em white;
 
   --gap: 1rem;
   position: relative;
@@ -130,7 +130,7 @@ footer {
 
 .marquee__content > span {
   transition: all 0.25s;
-  font-size: 4em;
+  font-size: 2em;
 }
 
 .marquee__content > span:hover {
