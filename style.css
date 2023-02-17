@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+section {
+  scroll-margin-top: 5.5rem;
+}
+
+hr {
+  height: 0.5px;
+  background-color: black;
+  border: none;
+  margin: 0.5em 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  height: 5rem;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+}
+
+header > .title {
+  margin: 1rem;
+  font-size: 2em;
+  margin: 1rem 1rem;
+  font-weight: 800;
+  animation: slide-in-bottom 1s ease-out;
+  animation: pulse 5s linear infinite;
+}
+
+nav {
+  margin: auto 1rem;
+  text-align: right;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.25s 0s;
+}
+
+.nav-item > a:hover {
+  font-size: 2em;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+.container {
+  margin: 1em auto;
+  padding: 1em;
+  border: 1px solid black;
+  max-width: 30rem;
+  animation: slide-in-bottom 1s ease-out;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.card {
+  margin: 0;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  margin-top: auto;
+  padding: 1rem;
+  bottom: 0;
+  background-color: white;
+  border-top: 1px solid black;
+  z-index: 100;
+}
+
+/* Marquee styles */
+.marquee {
+  background-color: black;
+  color: black;
+  -webkit-text-stroke: 0.25px white;
+
+  --gap: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  animation: slide-in-top 0.75s ease-out;
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee__content > span {
+  transition: all 0.25s;
+  font-size: 4em;
+}
+
+.marquee__content > span:hover {
+  color: white;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* Pause animation when reduced-motion is set */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__content {
+    animation-play-state: paused !important;
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-200%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
