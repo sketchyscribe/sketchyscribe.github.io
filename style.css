@@ -10,8 +10,10 @@ html {
 
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+
+main {
+  margin-bottom: 5rem;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -41,7 +43,6 @@ header {
   z-index: 1000;
   height: 5rem;
   overflow: hidden;
-  border-bottom: 1px solid black;
 }
 
 header > .title {
@@ -74,6 +75,7 @@ nav {
   border: 1px solid black;
   max-width: 30rem;
   overflow: hidden;
+  background-color: white;
 }
 
 .list {
@@ -93,12 +95,12 @@ a {
 }
 
 footer {
-  margin-top: auto;
-  padding: 1rem;
+  position: fixed;
   bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
   background-color: white;
   border-top: 1px solid black;
-  z-index: 100;
 }
 
 /* Marquee styles */
@@ -113,6 +115,7 @@ footer {
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
+  z-index: 1000;
 }
 
 .marquee__content {
